@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class BtnScript : MonoBehaviour
 {
+    //variable for the amount of teams this button should send
     public int teams = 0;
+    //GameObject for the manager that keeps track of teams
     public GameObject manager;
+
+    //timers can go here
+    public int buildTimer = 60;
 
     private void Start()
     {
