@@ -9,12 +9,9 @@ public class ManagerScript : MonoBehaviour
     //teams is how many teams are currently playing
     public int teams = 0;
     //variable for the time each build round should have
-    public int roundTimer = 0;
+    public int roundTimer = 60;
     //variable for the amount of lives each team has
-    public int t1Lives = 0;
-    public int t2Lives = 0;
-    public int t3Lives = 0;
-    public int t4Lives = 0;
+    public int[] teamLives;
     //Variable for counting the current round being played
     public int currentRound = 0;
 
