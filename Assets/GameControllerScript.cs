@@ -15,6 +15,9 @@ public class GameControllerScript : MonoBehaviour
     //array for teamHealth
     public int[] arrayTeamHealth;
 
+    //current players turn. Starts from player 1.
+    public int playerTurn = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,5 +45,17 @@ public class GameControllerScript : MonoBehaviour
             Debug.Log("Team" + i + "health: " + arrayTeamHealth[i]);
             manager.GetComponent<ManagerScript>().teamLives = arrayTeamHealth;
         }
+
+        Round();
+    }
+
+    public void Round() {
+        Debug.Log("Start round for player: " + playerTurn);
+
+
+        playerTurn++;
+        if (playerTurn > arrayOfTeams.Length)
+            playerTurn = 1;
+        //Invoke("Round",5); //Only for test purposes
     }
 }
