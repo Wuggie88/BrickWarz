@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameControllerScript : MonoBehaviour
 {
@@ -16,7 +17,11 @@ public class GameControllerScript : MonoBehaviour
     public int[] arrayTeamHealth;
 
     //current players turn. Starts from player 1.
-    public int playerTurn = 1;
+    public int teamTurn = 1;
+    //current players UI. 
+    public Text teamTurnTxt;
+    public Slider teamHealthSlider;
+    public Text teamHealthTxt;
 
     // Start is called before the first frame update
     void Start()
@@ -50,12 +55,21 @@ public class GameControllerScript : MonoBehaviour
     }
 
     public void Round() {
-        Debug.Log("Start round for player: " + playerTurn);
+        Debug.Log("Start round for team: " + teamTurn);
+        teamTurnTxt.text = "Team " + teamTurn + "'s turn";
+        teamHealthTxt.text = "Fortress' Health: " + arrayTeamHealth[teamTurn];
+        teamHealthSlider.value = arrayTeamHealth[teamTurn];
 
-
-        playerTurn++;
-        if (playerTurn > arrayOfTeams.Length)
-            playerTurn = 1;
+        
+        teamTurn++;
+        if (teamTurn > arrayOfTeams.Length)
+            teamTurn = 1;
         //Invoke("Round",5); //Only for test purposes
+    }
+
+    public void SelectSpot() {
+        //array of spots (free for build new, filled for upgrade, enemy filled spots for targeting)
+        //array linked with the teams array
+        //button connected to each spot -> gets activated or deactivated if available or not
     }
 }
