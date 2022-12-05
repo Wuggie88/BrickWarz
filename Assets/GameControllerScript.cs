@@ -51,20 +51,20 @@ public class GameControllerScript : MonoBehaviour
             manager.GetComponent<ManagerScript>().teamLives = arrayTeamHealth;
         }
 
-        Round();
+        Turn();
     }
 
-    public void Round() {
+    public void Turn() {
         Debug.Log("Start round for team: " + teamTurn);
         teamTurnTxt.text = "Team " + teamTurn + "'s turn";
-        teamHealthTxt.text = "Fortress' Health: " + arrayTeamHealth[teamTurn];
-        teamHealthSlider.value = arrayTeamHealth[teamTurn];
+        teamHealthTxt.text = "Fortress' Health: " + arrayTeamHealth[teamTurn-1];
+        teamHealthSlider.value = arrayTeamHealth[teamTurn-1];
 
         
         teamTurn++;
         if (teamTurn > arrayOfTeams.Length)
             teamTurn = 1;
-        //Invoke("Round",5); //Only for test purposes
+        //Invoke("Turn",5); //Only for test purposes
     }
 
     public void SelectSpot() {

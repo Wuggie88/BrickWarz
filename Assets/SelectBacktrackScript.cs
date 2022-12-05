@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SelectBacktrackScript : MonoBehaviour
 {
+    public GameObject gameManager, roundStartHolder, selectSpotHolder;
     public GameObject buildHolder, actionHolder, selectEnemyHolder;
     public GameObject parent;
 
@@ -43,6 +44,19 @@ public class SelectBacktrackScript : MonoBehaviour
 
     public void GetTarget(GameObject spotBtn)
     {
-        spot = spotBtn;
+        if (selector.name == "AttackBtn") {
+            //if you attack, you will get to choose which enemy team to attack
+            spot = spotBtn;
+            selectEnemyHolder.SetActive(true);
+        }
+        else
+        {
+            //do build, upgrade or actual atack function
+            Debug.Log("does action! next teams turn!");
+            //Goes to next teams turn
+            gameManager.GetComponent<GameControllerScript>().Turn();
+            roundStartHolder.SetActive(true);
+            selectSpotHolder.SetActive(false);
+        }
     }
 }

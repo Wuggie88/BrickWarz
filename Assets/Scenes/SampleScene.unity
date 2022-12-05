@@ -532,7 +532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &81995452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1022,7 +1022,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 221572075}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1579312073}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 832442729}
+        m_TargetAssemblyTypeName: SelectBacktrackScript, Assembly-CSharp
+        m_MethodName: SetSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 221572072}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1692772140}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &221572075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1619,13 +1655,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579312075}
+      - m_Target: {fileID: 832442729}
         m_TargetAssemblyTypeName: SelectBacktrackScript, Assembly-CSharp
         m_MethodName: GetTarget
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 328819980}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1692772140}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1856,7 +1904,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1692772142}
+      - m_Target: {fileID: 832442729}
         m_TargetAssemblyTypeName: SelectBacktrackScript, Assembly-CSharp
         m_MethodName: SetSelector
         m_Mode: 2
@@ -2540,7 +2588,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 522966943}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1579312073}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 832442729}
+        m_TargetAssemblyTypeName: SelectBacktrackScript, Assembly-CSharp
+        m_MethodName: SetSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 522966940}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1692772140}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &522966943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2827,7 +2911,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 583039640}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1579312073}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 832442729}
+        m_TargetAssemblyTypeName: SelectBacktrackScript, Assembly-CSharp
+        m_MethodName: SetSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 583039637}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1692772140}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &583039640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3714,13 +3834,14 @@ GameObject:
   - component: {fileID: 832442728}
   - component: {fileID: 832442727}
   - component: {fileID: 832442726}
+  - component: {fileID: 832442729}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &832442722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3862,6 +3983,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832442721}
   m_CullTransparentMesh: 0
+--- !u!114 &832442729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832442721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe3faba1858932143b44ee3fad1d0127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 832442721}
+  roundStartHolder: {fileID: 1992611238}
+  selectSpotHolder: {fileID: 1692772140}
+  buildHolder: {fileID: 1119195048}
+  actionHolder: {fileID: 739014566}
+  selectEnemyHolder: {fileID: 1579312073}
+  parent: {fileID: 0}
+  spot: {fileID: 0}
+  selector: {fileID: 0}
 --- !u!1 &854674430
 GameObject:
   m_ObjectHideFlags: 0
@@ -3943,7 +4085,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 854674433}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1579312073}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 832442729}
+        m_TargetAssemblyTypeName: SelectBacktrackScript, Assembly-CSharp
+        m_MethodName: SetSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 854674430}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1692772140}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &854674433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4143,17 +4321,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579312075}
-        m_TargetAssemblyTypeName: SelectBacktrackScript, Assembly-CSharp
-        m_MethodName: BackTrack
-        m_Mode: 1
+      - m_Target: {fileID: 1692772140}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1579312073}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -4317,7 +4495,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4856,7 +5034,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1692772142}
+      - m_Target: {fileID: 832442729}
         m_TargetAssemblyTypeName: SelectBacktrackScript, Assembly-CSharp
         m_MethodName: SetSelector
         m_Mode: 2
@@ -5184,13 +5362,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579312075}
+      - m_Target: {fileID: 832442729}
         m_TargetAssemblyTypeName: SelectBacktrackScript, Assembly-CSharp
         m_MethodName: GetTarget
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1181122519}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1692772140}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5624,7 +5814,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1692772142}
+      - m_Target: {fileID: 832442729}
         m_TargetAssemblyTypeName: SelectBacktrackScript, Assembly-CSharp
         m_MethodName: SetSelector
         m_Mode: 2
@@ -5916,7 +6106,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1692772142}
+      - m_Target: {fileID: 832442729}
         m_TargetAssemblyTypeName: SelectBacktrackScript, Assembly-CSharp
         m_MethodName: BackTrack
         m_Mode: 1
@@ -6369,13 +6559,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579312075}
+      - m_Target: {fileID: 832442729}
         m_TargetAssemblyTypeName: SelectBacktrackScript, Assembly-CSharp
         m_MethodName: GetTarget
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1451854091}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1692772140}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6868,7 +7070,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1579312074}
-  - component: {fileID: 1579312075}
   m_Layer: 5
   m_Name: SelectEnemyHolder
   m_TagString: Untagged
@@ -6900,24 +7101,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1579312075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579312073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe3faba1858932143b44ee3fad1d0127, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildHolder: {fileID: 1119195048}
-  actionHolder: {fileID: 739014566}
-  selectEnemyHolder: {fileID: 0}
-  parent: {fileID: 0}
-  spot: {fileID: 0}
-  selector: {fileID: 0}
 --- !u!1 &1604198173
 GameObject:
   m_ObjectHideFlags: 0
@@ -7260,7 +7443,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1692772141}
-  - component: {fileID: 1692772142}
   m_Layer: 5
   m_Name: SelectSpotHolder
   m_TagString: Untagged
@@ -7292,24 +7474,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1692772142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692772140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe3faba1858932143b44ee3fad1d0127, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildHolder: {fileID: 1119195048}
-  actionHolder: {fileID: 739014566}
-  selectEnemyHolder: {fileID: 1579312073}
-  parent: {fileID: 0}
-  spot: {fileID: 0}
-  selector: {fileID: 0}
 --- !u!1 &1729818164
 GameObject:
   m_ObjectHideFlags: 0
