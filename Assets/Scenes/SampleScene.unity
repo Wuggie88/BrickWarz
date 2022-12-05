@@ -3944,7 +3944,11 @@ MonoBehaviour:
   amountOfTeams: 0
   teamHealth: 50
   arrayTeamHealth: 
-  teamTurn: 1
+  p1Buildings: []
+  p2Buildings: []
+  p3Buildings: []
+  p4Buildings: []
+  teamTurn: 0
   teamTurnTxt: {fileID: 457546006}
   teamHealthSlider: {fileID: 567197631}
   teamHealthTxt: {fileID: 2031078155}
@@ -4001,9 +4005,15 @@ MonoBehaviour:
   buildHolder: {fileID: 1119195048}
   actionHolder: {fileID: 739014566}
   selectEnemyHolder: {fileID: 1579312073}
+  spots:
+  - {fileID: 1181122519}
+  - {fileID: 1451854091}
+  - {fileID: 328819980}
   parent: {fileID: 0}
   spot: {fileID: 0}
   selector: {fileID: 0}
+  teamTurn: 0
+  gameController: {fileID: 0}
 --- !u!1 &854674430
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,20 +6,67 @@ public class SelectBacktrackScript : MonoBehaviour
 {
     public GameObject gameManager, roundStartHolder, selectSpotHolder;
     public GameObject buildHolder, actionHolder, selectEnemyHolder;
+    public GameObject[] spots;
     public GameObject parent;
 
     public GameObject spot;
     public GameObject selector;
+    public int teamTurn;
+    public GameControllerScript gameController;
+
+    private void Start() {
+        gameController = gameManager.GetComponent<GameControllerScript>();
+    }
 
     //Remebers the selector & action
     public void SetSelector(GameObject action)
-    {
+    {   
+        teamTurn = gameController.teamTurn;
         selector = action;
         switch (selector.name)
         {
             case "BuildNewBtn":
                 parent = buildHolder;
-                //set text in GUI to what building you want to build
+                switch (teamTurn){
+                    case 1:
+                        for(int i = 0; i < gameController.p1Buildings.Length; i++) {
+                            if (gameController.p1Buildings[i] == "") {
+                                spots[i].SetActive(true);
+                            } else {
+                                spots[i].SetActive(false);
+                            }
+                        }
+                        break;
+                    case 2:
+                        for (int i = 0; i < gameController.p2Buildings.Length; i++) {
+                            if (gameController.p2Buildings[i] == "") {
+                                spots[i].SetActive(true);
+                            } else {
+                                spots[i].SetActive(false);
+                            }
+                        }
+                        break;
+                    case 3:
+                        for (int i = 0; i < gameController.p3Buildings.Length; i++) {
+                            if (gameController.p3Buildings[i] == "") {
+                                spots[i].SetActive(true);
+                            } else {
+                                spots[i].SetActive(false);
+                            }
+                        }
+                            break;
+                    case 4:
+                        for (int i = 0; i < gameController.p4Buildings.Length; i++) {
+                            if (gameController.p4Buildings[i] == "") {
+                                spots[i].SetActive(true);
+                            } else {
+                                spots[i].SetActive(false);
+                            }
+                        }
+                            break;
+
+                }
+
                 break;
             case "UpgradeBtn":
                 parent = buildHolder;

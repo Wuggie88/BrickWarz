@@ -15,9 +15,14 @@ public class GameControllerScript : MonoBehaviour
     public int teamHealth = 50;
     //array for teamHealth
     public int[] arrayTeamHealth;
+    //arrays for buildings
+    public string[] p1Buildings;
+    public string[] p2Buildings;
+    public string[] p3Buildings;
+    public string[] p4Buildings;
 
     //current players turn. Starts from player 1.
-    public int teamTurn = 1;
+    public int teamTurn = 0;
     //current players UI. 
     public Text teamTurnTxt;
     public Slider teamHealthSlider;
@@ -26,7 +31,10 @@ public class GameControllerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        p1Buildings = new string[3] { "", "", "" };
+        p2Buildings = new string[3] { "", "", "" };
+        p3Buildings = new string[3] { "", "", "" };
+        p4Buildings = new string[3] { "", "", "" };
     }
 
     // Update is called once per frame
@@ -50,20 +58,19 @@ public class GameControllerScript : MonoBehaviour
             Debug.Log("Team" + i + "health: " + arrayTeamHealth[i]);
             manager.GetComponent<ManagerScript>().teamLives = arrayTeamHealth;
         }
-
         Turn();
     }
 
     public void Turn() {
-        Debug.Log("Start round for team: " + teamTurn);
-        teamTurnTxt.text = "Team " + teamTurn + "'s turn";
-        teamHealthTxt.text = "Fortress' Health: " + arrayTeamHealth[teamTurn-1];
-        teamHealthSlider.value = arrayTeamHealth[teamTurn-1];
+        Debug.Log("Start round for team: " + (teamTurn + 1));
+        teamTurnTxt.text = "Team " + (teamTurn + 1) + "'s turn";
+        teamHealthTxt.text = "Fortress' Health: " + arrayTeamHealth[teamTurn];
+        teamHealthSlider.value = arrayTeamHealth[teamTurn];
 
         
         teamTurn++;
         if (teamTurn > arrayOfTeams.Length)
-            teamTurn = 1;
+            teamTurn = 0;
         //Invoke("Turn",5); //Only for test purposes
     }
 
