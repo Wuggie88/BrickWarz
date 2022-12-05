@@ -67,10 +67,10 @@ public class GameControllerScript : MonoBehaviour
         teamHealthTxt.text = "Fortress' Health: " + arrayTeamHealth[teamTurn];
         teamHealthSlider.value = arrayTeamHealth[teamTurn];
 
-        
         teamTurn++;
-        if (teamTurn > arrayOfTeams.Length)
+        if (teamTurn + 1 > arrayOfTeams.Length)
             teamTurn = 0;
+
         //Invoke("Turn",5); //Only for test purposes
     }
 
