@@ -18,6 +18,7 @@ public class SelectBacktrackScript : MonoBehaviour
     public buildingType currentBuilding;
 
     private void Start() {
+        //get refference to the game controller script
         gameController = gameManager.GetComponent<GameControllerScript>();
     }
 
@@ -26,12 +27,14 @@ public class SelectBacktrackScript : MonoBehaviour
     {   
         teamTurn = gameController.teamTurn;
         selector = action;
+        //Can maybe use dictinary to refer to arrays and varibles easily instead of running nested switches with multiple switch cases
         switch (selector.name)
         {
             case "BuildNewAttackBtn": case "BuildNewDefBtn":
                 parent = buildHolder;
                 switch (teamTurn){
                     case 1:
+                        //goes through the array of a players buildings and either enables or disables the buttons link to the builds to display the right buttons
                         for(int i = 0; i < gameController.p1Buildings.Length; i++) {
                             if (gameController.p1Buildings[i] == "") {
                                 spots[i].SetActive(true);
@@ -158,11 +161,14 @@ public class SelectBacktrackScript : MonoBehaviour
             
             selectEnemyHolder.SetActive(true);
         } else if (selector.name == "BuildNewAttackBtn" || selector.name == "BuildNewDefBtn") {
-
+            //if you want to build
             switch (teamTurn) {
+                //if its player 1's turn
                 case 1:
                     switch (spot.name) {
+                        //which spot you clicked
                         case "Spot1Btn":
+                            //what building type
                             if(currentBuilding == buildingType.Attack) {
                                 gameController.p1Buildings[0] = "A1";
                             } else {
@@ -267,10 +273,12 @@ public class SelectBacktrackScript : MonoBehaviour
             roundStartHolder.SetActive(true);
             selectSpotHolder.SetActive(false);
         } else if (selector.name == "UpgradeBtn") {
+            //if you want to upgrade
             switch (teamTurn) {
                 case 1:
                     switch (spot.name) {
                         case "Spot1Btn":
+                            //sets what gets upgraded
                             switch (gameController.p1Buildings[0]) {
                                 case "A1":
                                     gameController.p1Buildings[0] = "A2";
@@ -516,7 +524,7 @@ public class SelectBacktrackScript : MonoBehaviour
                     }
                     break;
             }
-
+            //goes to next teams turn
             gameManager.GetComponent<GameControllerScript>().Turn();
             roundStartHolder.SetActive(true);
             selectSpotHolder.SetActive(false);
