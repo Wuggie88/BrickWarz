@@ -62,14 +62,16 @@ public class GameControllerScript : MonoBehaviour
     }
 
     public void Turn() {
+        if (teamTurn + 1 > arrayOfTeams.Length)
+            teamTurn = 0;
+
         Debug.Log("Start round for team: " + (teamTurn + 1));
         teamTurnTxt.text = "Team " + (teamTurn + 1) + "'s turn";
         teamHealthTxt.text = "Fortress' Health: " + arrayTeamHealth[teamTurn];
         teamHealthSlider.value = arrayTeamHealth[teamTurn];
 
         teamTurn++;
-        if (teamTurn + 1 > arrayOfTeams.Length)
-            teamTurn = 0;
+        
 
         //Invoke("Turn",5); //Only for test purposes
     }

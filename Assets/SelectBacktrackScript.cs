@@ -14,6 +14,9 @@ public class SelectBacktrackScript : MonoBehaviour
     public int teamTurn;
     public GameControllerScript gameController;
 
+    public enum buildingType { Attack, Defence};
+    public buildingType currentBuilding;
+
     private void Start() {
         gameController = gameManager.GetComponent<GameControllerScript>();
     }
@@ -25,7 +28,7 @@ public class SelectBacktrackScript : MonoBehaviour
         selector = action;
         switch (selector.name)
         {
-            case "BuildNewBtn":
+            case "BuildNewAttackBtn": case "BuildNewDefBtn":
                 parent = buildHolder;
                 switch (teamTurn){
                     case 1:
@@ -36,6 +39,11 @@ public class SelectBacktrackScript : MonoBehaviour
                                 spots[i].SetActive(false);
                             }
                         }
+                        if(selector.name == "BuildNewAttackBtn") {
+                            currentBuilding = buildingType.Attack;
+                        } else {
+                            currentBuilding = buildingType.Defence;
+                        }
                         break;
                     case 2:
                         for (int i = 0; i < gameController.p2Buildings.Length; i++) {
@@ -44,6 +52,11 @@ public class SelectBacktrackScript : MonoBehaviour
                             } else {
                                 spots[i].SetActive(false);
                             }
+                        }
+                        if (selector.name == "BuildNewAttackBtn") {
+                            currentBuilding = buildingType.Attack;
+                        } else {
+                            currentBuilding = buildingType.Defence;
                         }
                         break;
                     case 3:
@@ -54,7 +67,12 @@ public class SelectBacktrackScript : MonoBehaviour
                                 spots[i].SetActive(false);
                             }
                         }
-                            break;
+                        if (selector.name == "BuildNewAttackBtn") {
+                            currentBuilding = buildingType.Attack;
+                        } else {
+                            currentBuilding = buildingType.Defence;
+                        }
+                        break;
                     case 4:
                         for (int i = 0; i < gameController.p4Buildings.Length; i++) {
                             if (gameController.p4Buildings[i] == "") {
@@ -63,7 +81,12 @@ public class SelectBacktrackScript : MonoBehaviour
                                 spots[i].SetActive(false);
                             }
                         }
-                            break;
+                        if (selector.name == "BuildNewAttackBtn") {
+                            currentBuilding = buildingType.Attack;
+                        } else {
+                            currentBuilding = buildingType.Defence;
+                        }
+                        break;
 
                 }
 
@@ -91,13 +114,122 @@ public class SelectBacktrackScript : MonoBehaviour
 
     public void GetTarget(GameObject spotBtn)
     {
+        spot = spotBtn;
+
         if (selector.name == "AttackBtn") {
             //if you attack, you will get to choose which enemy team to attack
-            spot = spotBtn;
+            
             selectEnemyHolder.SetActive(true);
-        }
-        else
-        {
+        } else if (selector.name == "BuildNewAttackBtn" || selector.name == "BuildNewDefBtn") {
+
+            switch (teamTurn) {
+                case 1:
+                    switch (spot.name) {
+                        case "Spot1Btn":
+                            if(currentBuilding == buildingType.Attack) {
+                                gameController.p1Buildings[0] = "A1";
+                            } else {
+                                gameController.p1Buildings[0] = "D1";
+                            }
+                            break;
+                        case "Spot2Btn":
+                            if (currentBuilding == buildingType.Attack) {
+                                gameController.p1Buildings[1] = "A1";
+                            } else {
+                                gameController.p1Buildings[1] = "D1";
+                            }
+                            break;
+                        case "Spot3Btn":
+                            if (currentBuilding == buildingType.Attack) {
+                                gameController.p1Buildings[2] = "A1";
+                            } else {
+                                gameController.p1Buildings[2] = "D1";
+                            }
+                            break;
+                    }
+                    break;
+                case 2:
+                    switch (spot.name) {
+                        case "Spot1Btn":
+                            if (currentBuilding == buildingType.Attack) {
+                                gameController.p2Buildings[0] = "A1";
+                            } else {
+                                gameController.p2Buildings[0] = "D1";
+                            }
+                            break;
+                        case "Spot2Btn":
+                            if (currentBuilding == buildingType.Attack) {
+                                gameController.p2Buildings[1] = "A1";
+                            } else {
+                                gameController.p2Buildings[1] = "D1";
+                            }
+                            break;
+                        case "Spot3Btn":
+                            if (currentBuilding == buildingType.Attack) {
+                                gameController.p2Buildings[2] = "A1";
+                            } else {
+                                gameController.p2Buildings[2] = "D1";
+                            }
+                            break;
+                    }
+                    break;
+                case 3:
+                    switch (spot.name) {
+                        case "Spot1Btn":
+                            if (currentBuilding == buildingType.Attack) {
+                                gameController.p3Buildings[0] = "A1";
+                            } else {
+                                gameController.p3Buildings[0] = "D1";
+                            }
+                            break;
+                        case "Spot2Btn":
+                            if (currentBuilding == buildingType.Attack) {
+                                gameController.p3Buildings[1] = "A1";
+                            } else {
+                                gameController.p3Buildings[1] = "D1";
+                            }
+                            break;
+                        case "Spot3Btn":
+                            if (currentBuilding == buildingType.Attack) {
+                                gameController.p3Buildings[2] = "A1";
+                            } else {
+                                gameController.p3Buildings[2] = "D1";
+                            }
+                            break;
+                    }
+                    break;
+
+                case 4:
+                    switch (spot.name) {
+                        case "Spot1Btn":
+                            if (currentBuilding == buildingType.Attack) {
+                                gameController.p4Buildings[0] = "A1";
+                            } else {
+                                gameController.p4Buildings[0] = "D1";
+                            }
+                            break;
+                        case "Spot2Btn":
+                            if (currentBuilding == buildingType.Attack) {
+                                gameController.p4Buildings[1] = "A1";
+                            } else {
+                                gameController.p4Buildings[1] = "D1";
+                            }
+                            break;
+                        case "Spot3Btn":
+                            if (currentBuilding == buildingType.Attack) {
+                                gameController.p4Buildings[2] = "A1";
+                            } else {
+                                gameController.p4Buildings[2] = "D1";
+                            }
+                            break;
+                    }
+                    break;
+            }
+
+            gameManager.GetComponent<GameControllerScript>().Turn();
+            roundStartHolder.SetActive(true);
+            selectSpotHolder.SetActive(false);
+        } else {
             //do build, upgrade or actual atack function
             Debug.Log("does action! next teams turn!");
             //Goes to next teams turn
