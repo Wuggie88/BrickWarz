@@ -9,7 +9,7 @@ public class ManagerScript : MonoBehaviour
     //teams is how many teams are currently playing
     public int teams = 0;
     //variable for the time each build round should have
-    public int roundTimer = 60;
+    public float roundTimer = 60;
     //variable for the amount of lives each team has
     public int[] teamLives;
     //Variable for counting the current round being played
@@ -22,7 +22,7 @@ public class ManagerScript : MonoBehaviour
     }
 
     //function that takes an int, to set the amount of time each build round should take
-    public void setTimer(int data) {
+    public void setTimer(float data) {
         roundTimer = data;
     }
 }
