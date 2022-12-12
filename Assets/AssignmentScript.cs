@@ -12,6 +12,7 @@ public class AssignmentScript : MonoBehaviour
     public int SelectedAss;
     public float TimerValue;
     public GameObject Manager;
+    public GameObject gameController;
     public Text AssTimerTxt;
     public int level;
 
@@ -65,5 +66,15 @@ public class AssignmentScript : MonoBehaviour
                 AssContainer.sprite = AssLevelThree[SelectedAss];
                 break;
         }
+    }
+
+    public void success() {
+        gameController.GetComponent<SelectBacktrackScript>().successAssignment();
+        this.gameObject.SetActive(false);
+    }
+
+    public void failed() {
+        gameController.GetComponent<SelectBacktrackScript>().failedAssignment();
+        this.gameObject.SetActive(false);
     }
 }

@@ -11,8 +11,11 @@ public class SelectBacktrackScript : MonoBehaviour
 
     public GameObject spot;
     public GameObject selector;
+    public GameObject assignments;
     public int teamTurn;
     public GameControllerScript gameController;
+
+    public string buildingVar;
 
     public enum buildingType { Attack, Defence};
     public buildingType currentBuilding;
@@ -168,12 +171,479 @@ public class SelectBacktrackScript : MonoBehaviour
                     switch (spot.name) {
                         //which spot you clicked
                         case "Spot1Btn":
+                        case "Spot2Btn":
+                        case "Spot3Btn":
+                            assignments.gameObject.SetActive(true);
+                            assignments.GetComponent<AssignmentScript>().level = 1;
+                            assignments.GetComponent<AssignmentScript>().StartAss();
+                            break;
+                    }
+                    break;
+                case 2:
+                    switch (spot.name) { 
+                        case "Spot1Btn":
+                        case "Spot2Btn":
+                        case "Spot3Btn":
+                            assignments.gameObject.SetActive(true);
+                            assignments.GetComponent<AssignmentScript>().level = 1;
+                            assignments.GetComponent<AssignmentScript>().StartAss();
+                            break;
+                    }
+                    break;
+                case 3:
+                    switch (spot.name) {
+                        case "Spot1Btn":
+                        case "Spot2Btn":
+                        case "Spot3Btn":
+                            assignments.gameObject.SetActive(true);
+                            assignments.GetComponent<AssignmentScript>().level = 1;
+                            assignments.GetComponent<AssignmentScript>().StartAss();
+                            break;
+                    }
+                    break;
+
+                case 4:
+                    switch (spot.name) {
+                        case "Spot1Btn":
+                        case "Spot2Btn":
+                        case "Spot3Btn":
+                            assignments.gameObject.SetActive(true);
+                            assignments.GetComponent<AssignmentScript>().level = 1;
+                            assignments.GetComponent<AssignmentScript>().StartAss();
+                            break;
+                    }
+                    break;
+            }
+        } else if (selector.name == "UpgradeBtn") {
+            //if you want to upgrade
+            switch (teamTurn) {
+                case 1:
+                    switch (spot.name) {
+                        case "Spot1Btn":
+                            //sets what gets upgraded
+                            switch (gameController.p1Buildings[0]) {
+                                case "A1":
+                                    buildingVar = "A2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "A2":
+                                    buildingVar = "A3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D1":
+                                    buildingVar = "D2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D2":
+                                    buildingVar = "D3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                default:
+                                    gameController.teamTurn -= 1;
+                                    
+
+                                    break;
+                            }
+                            break;
+                        case "Spot2Btn":
+                            switch (gameController.p1Buildings[1]) {
+                                case "A1":
+                                    buildingVar = "A2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "A2":
+                                    buildingVar = "A3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D1":
+                                    buildingVar = "D2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D2":
+                                    buildingVar = "D3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                default:
+                                    gameController.teamTurn -= 1;
+                                    break;
+                            }
+                            break;
+                        case "Spot3Btn":
+                            switch (gameController.p1Buildings[2]) {
+                                case "A1":
+                                    buildingVar = "A2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "A2":
+                                    buildingVar = "A3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D1":
+                                    buildingVar = "D2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D2":
+                                    buildingVar = "D3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                default:
+                                    gameController.teamTurn -= 1;
+                                    break;
+                            }
+                            break;
+                    }
+                    break;
+                case 2:
+                    switch (spot.name) {
+                        case "Spot1Btn":
+                            switch (gameController.p2Buildings[0]) {
+                                case "A1":
+                                    buildingVar = "A2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "A2":
+                                    buildingVar = "A3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D1":
+                                    buildingVar = "D2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D2":
+                                    buildingVar = "D3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                default:
+                                    gameController.teamTurn -= 1;
+                                    break;
+                            }
+                            break;
+                        case "Spot2Btn":
+                            switch (gameController.p2Buildings[1]) {
+                                case "A1":
+                                    buildingVar = "A2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "A2":
+                                    buildingVar = "A3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D1":
+                                    buildingVar = "D2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D2":
+                                    buildingVar = "D3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                default:
+                                    gameController.teamTurn -= 1;
+                                    break;
+                            }
+                            break;
+                        case "Spot3Btn":
+                            switch (gameController.p2Buildings[2]) {
+                                case "A1":
+                                    buildingVar = "A2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "A2":
+                                    buildingVar = "A3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D1":
+                                    buildingVar = "D2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D2":
+                                    buildingVar = "D3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                default:
+                                    gameController.teamTurn -= 1;
+                                    break;
+                            }
+                            break;
+                    }
+                    break;
+                case 3:
+                    switch (spot.name) {
+                        case "Spot1Btn":
+                            switch (gameController.p3Buildings[0]) {
+                                case "A1":
+                                    buildingVar = "A2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "A2":
+                                    buildingVar = "A3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D1":
+                                    buildingVar = "D2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D2":
+                                    buildingVar = "D3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                default:
+                                    gameController.teamTurn -= 1;
+                                    break;
+                            }
+                            break;
+                        case "Spot2Btn":
+                            switch (gameController.p3Buildings[1]) {
+                                case "A1":
+                                    buildingVar = "A2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "A2":
+                                    buildingVar = "A3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D1":
+                                    buildingVar = "D2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D2":
+                                    buildingVar = "D3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                default:
+                                    gameController.teamTurn -= 1;
+                                    break;
+                            }
+                            break;
+                        case "Spot3Btn":
+                            switch (gameController.p3Buildings[2]) {
+                                case "A1":
+                                    buildingVar = "A2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "A2":
+                                    buildingVar = "A3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D1":
+                                    buildingVar = "D2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D2":
+                                    buildingVar = "D3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                default:
+                                    gameController.teamTurn -= 1;
+                                    break;
+                            }
+                            break;
+                    }
+                    break;
+
+                case 4:
+                    switch (spot.name) {
+                        case "Spot1Btn":
+                            switch (gameController.p4Buildings[0]) {
+                                case "A1":
+                                    buildingVar = "A2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "A2":
+                                    buildingVar = "A3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D1":
+                                    buildingVar = "D2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D2":
+                                    buildingVar = "D3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                default:
+                                    gameController.teamTurn -= 1;
+                                    break;
+                            }
+                            break;
+                        case "Spot2Btn":
+                            switch (gameController.p4Buildings[1]) {
+                                case "A1":
+                                    buildingVar = "A2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "A2":
+                                    buildingVar = "A3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D1":
+                                    buildingVar = "D2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D2":
+                                    buildingVar = "D3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                default:
+                                    gameController.teamTurn -= 1;
+                                    break;
+                            }
+                            break;
+                        case "Spot3Btn":
+                            switch (gameController.p4Buildings[2]) {
+                                case "A1":
+                                    buildingVar = "A2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "A2":
+                                    buildingVar = "A3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D1":
+                                    buildingVar = "D2";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 2;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                case "D2":
+                                    buildingVar = "D3";
+                                    assignments.gameObject.SetActive(true);
+                                    assignments.GetComponent<AssignmentScript>().level = 3;
+                                    assignments.GetComponent<AssignmentScript>().StartAss();
+                                    break;
+                                default:
+                                    gameController.teamTurn -= 1;
+                                    break;
+                            }
+                            break;
+                    }
+                    break;
+            }
+        }
+        else {
+            //do build, upgrade or actual atack function
+            Debug.Log("does action! next teams turn!");
+            //Goes to next teams turn
+            gameManager.GetComponent<GameControllerScript>().Turn();
+            roundStartHolder.SetActive(true);
+            selectSpotHolder.SetActive(false);
+        }
+    }
+
+    public void successAssignment() {
+
+        if (selector.name == "AttackBtn") {
+            //if you attack, you will get to choose which enemy team to attack
+
+            selectEnemyHolder.SetActive(true);
+        } else if (selector.name == "BuildNewAttackBtn" || selector.name == "BuildNewDefBtn") {
+            //if you want to build
+            switch (teamTurn) {
+                //if its player 1's turn
+                case 1:
+                    switch (spot.name) {
+                        //which spot you clicked
+                        case "Spot1Btn":
+
                             //what building type
-                            if(currentBuilding == buildingType.Attack) {
+                            if (currentBuilding == buildingType.Attack) {
                                 gameController.p1Buildings[0] = "A1";
+                                //This is where we send the building on specific spot to the server
                             } else {
                                 gameController.p1Buildings[0] = "D1";
                             }
+                            
                             break;
                         case "Spot2Btn":
                             if (currentBuilding == buildingType.Attack) {
@@ -294,7 +764,7 @@ public class SelectBacktrackScript : MonoBehaviour
                                     break;
                                 default:
                                     gameController.teamTurn -= 1;
-                                    
+
 
                                     break;
                             }
@@ -529,8 +999,7 @@ public class SelectBacktrackScript : MonoBehaviour
             roundStartHolder.SetActive(true);
             selectSpotHolder.SetActive(false);
 
-        }
-        else {
+        } else {
             //do build, upgrade or actual atack function
             Debug.Log("does action! next teams turn!");
             //Goes to next teams turn
@@ -538,5 +1007,11 @@ public class SelectBacktrackScript : MonoBehaviour
             roundStartHolder.SetActive(true);
             selectSpotHolder.SetActive(false);
         }
+    }
+
+    public void failedAssignment() {
+        gameManager.GetComponent<GameControllerScript>().Turn();
+        roundStartHolder.SetActive(true);
+        selectSpotHolder.SetActive(false);
     }
 }

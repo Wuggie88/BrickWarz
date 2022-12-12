@@ -4171,12 +4171,21 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 65dacfbff780319408ffb82213aa26c9, type: 3}
   - {fileID: 21300000, guid: d13c9fe58608cf34782c8b75145eae2a, type: 3}
   - {fileID: 21300000, guid: db77a51b4ba6f664dbea1fc0de126f18, type: 3}
-  AssLevelTwo: []
-  AssLevelThree: []
+  AssLevelTwo:
+  - {fileID: 21300000, guid: 06c40774f9e92d54e9bd9ad84fbb69fb, type: 3}
+  - {fileID: 21300000, guid: 981131871dfaae14bb78c9cd370840f6, type: 3}
+  - {fileID: 21300000, guid: 4e30b753c7af55f4f88f9130098cdc71, type: 3}
+  - {fileID: 21300000, guid: d11fb95a714191e41884abd02b954bda, type: 3}
+  AssLevelThree:
+  - {fileID: 21300000, guid: cfb6755f271c2bf46bd1bdb8c3cc9bdf, type: 3}
+  - {fileID: 21300000, guid: 17b9ce387953f974588886787222d047, type: 3}
+  - {fileID: 21300000, guid: 0ac3ec007ff0e324abae62445cab474d, type: 3}
+  - {fileID: 21300000, guid: 701b2bead87f1f84ba8f86690f7ee303, type: 3}
   AssContainer: {fileID: 515194647}
   SelectedAss: 0
   TimerValue: 0
   Manager: {fileID: 608287785}
+  gameController: {fileID: 832442721}
   AssTimerTxt: {fileID: 1240169486}
   level: 0
 --- !u!1 &727397247
@@ -5006,8 +5015,10 @@ MonoBehaviour:
   parent: {fileID: 0}
   spot: {fileID: 0}
   selector: {fileID: 0}
+  assignments: {fileID: 686531154}
   teamTurn: 0
   gameController: {fileID: 0}
+  buildingVar: 
   currentBuilding: 0
 --- !u!1 &854674430
 GameObject:
@@ -7096,7 +7107,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1367576356}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 686531156}
+        m_TargetAssemblyTypeName: AssignmentScript, Assembly-CSharp
+        m_MethodName: failed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1367576356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9401,7 +9424,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1789747519}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 686531156}
+        m_TargetAssemblyTypeName: AssignmentScript, Assembly-CSharp
+        m_MethodName: success
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1789747519
 MonoBehaviour:
   m_ObjectHideFlags: 0

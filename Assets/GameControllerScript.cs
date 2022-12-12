@@ -70,8 +70,12 @@ public class GameControllerScript : MonoBehaviour
         teamHealthTxt.text = "Fortress' Health: " + arrayTeamHealth[teamTurn];
         teamHealthSlider.value = arrayTeamHealth[teamTurn];
 
+        //do something with the board lights here
+
         teamTurn++;
         
+        //random event
+
 
         //Invoke("Turn",5); //Only for test purposes
     }
