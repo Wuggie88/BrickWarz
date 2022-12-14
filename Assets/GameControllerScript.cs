@@ -21,8 +21,18 @@ public class GameControllerScript : MonoBehaviour
     public string[] p3Buildings;
     public string[] p4Buildings;
 
+    //event gameobject
+    public GameObject eventHandler;
+    //event int
+    public int eventHappening;
+
+    //round Holder Gameobject
+    public GameObject RoundHolder;
+
     //current players turn. Starts from player 1.
     public int teamTurn = 0;
+    //amount of total turns played
+    public int totalTurns = 0;
     //current players UI. 
     public Text teamTurnTxt;
     public Slider teamHealthSlider;
@@ -67,17 +77,29 @@ public class GameControllerScript : MonoBehaviour
 
         Debug.Log("Start round for team: " + (teamTurn + 1));
         teamTurnTxt.text = "Team " + (teamTurn + 1) + "'s turn";
-        teamHealthTxt.text = "Fortress' Health: " + arrayTeamHealth[teamTurn];
-        teamHealthSlider.value = arrayTeamHealth[teamTurn];
+        setHealth();
 
         //do something with the board lights here
 
         teamTurn++;
-        
-        //random event
+        totalTurns++;
 
+        //random event
+        eventHappening = Random.Range(0, 10);
+
+        if(eventHappening == 6 && totalTurns > ((amountOfTeams * 3) - 1)) {
+            eventHandler.SetActive(true);
+            eventHandler.GetComponent<EventScript>().startEvent();
+        } else {
+            RoundHolder.SetActive(true);
+        }
 
         //Invoke("Turn",5); //Only for test purposes
+    }
+
+    public void setHealth() {
+        teamHealthTxt.text = "Fortress' Health: " + arrayTeamHealth[teamTurn];
+        teamHealthSlider.value = arrayTeamHealth[teamTurn];
     }
 
     public void SelectSpot() {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SelectBacktrackScript : MonoBehaviour
 {
-    public GameObject gameManager, roundStartHolder, selectSpotHolder;
+    public GameObject gameManager, selectSpotHolder;
     public GameObject buildHolder, actionHolder, selectEnemyHolder;
     public GameObject[] spots;
     public GameObject parent;
@@ -616,7 +616,6 @@ public class SelectBacktrackScript : MonoBehaviour
             Debug.Log("does action! next teams turn!");
             //Goes to next teams turn
             gameManager.GetComponent<GameControllerScript>().Turn();
-            roundStartHolder.SetActive(true);
             selectSpotHolder.SetActive(false);
         }
     }
@@ -740,7 +739,6 @@ public class SelectBacktrackScript : MonoBehaviour
             }
 
             gameManager.GetComponent<GameControllerScript>().Turn();
-            roundStartHolder.SetActive(true);
             selectSpotHolder.SetActive(false);
         } else if (selector.name == "UpgradeBtn") {
             //if you want to upgrade
@@ -996,7 +994,6 @@ public class SelectBacktrackScript : MonoBehaviour
             }
             //goes to next teams turn
             gameManager.GetComponent<GameControllerScript>().Turn();
-            roundStartHolder.SetActive(true);
             selectSpotHolder.SetActive(false);
 
         } else {
@@ -1004,14 +1001,12 @@ public class SelectBacktrackScript : MonoBehaviour
             Debug.Log("does action! next teams turn!");
             //Goes to next teams turn
             gameManager.GetComponent<GameControllerScript>().Turn();
-            roundStartHolder.SetActive(true);
             selectSpotHolder.SetActive(false);
         }
     }
 
     public void failedAssignment() {
         gameManager.GetComponent<GameControllerScript>().Turn();
-        roundStartHolder.SetActive(true);
         selectSpotHolder.SetActive(false);
     }
 }
