@@ -7,10 +7,17 @@ public class SelectBacktrackScript : MonoBehaviour
     public GameObject gameManager, selectSpotHolder;
     public GameObject buildHolder, actionHolder, selectEnemyHolder;
     public GameObject[] spots;
+    public GameObject[] teamSpots;
     public GameObject parent;
 
     public GameObject spot;
     public GameObject selector;
+    public GameObject attackingSpot;
+
+    public int team;
+    public int atkSpot;
+    public int damage;
+
     public GameObject assignments;
     public int teamTurn;
     public GameControllerScript gameController;
@@ -99,6 +106,7 @@ public class SelectBacktrackScript : MonoBehaviour
                 break;
             case "UpgradeBtn":
                 parent = buildHolder;
+                // There should be an else if (array[i] == "A3" OR "D3" -> SetActive(false)), as it will show all buildings as able to be upgraded.
                 switch (teamTurn) {
                     case 1:
                         for (int i = 0; i < gameController.p1Buildings.Length; i++) {
@@ -140,11 +148,88 @@ public class SelectBacktrackScript : MonoBehaviour
                 break;
             case "AttackBtn":
                 parent = actionHolder;
-                //set text in GUI to what building you want to use
+                // There should maybe be something with only attack can attack.
+                switch (teamTurn) {
+                    case 1:
+                        for (int i = 0; i < gameController.p1Buildings.Length; i++) {
+                            if (gameController.p1Buildings[i] == "") {
+                                spots[i].SetActive(false);
+                            } else {
+                                spots[i].SetActive(true);
+                            }
+                        }
+                        break;
+                    case 2:
+                        for (int i = 0; i < gameController.p2Buildings.Length; i++) {
+                            if (gameController.p2Buildings[i] == "") {
+                                spots[i].SetActive(false);
+                            } else {
+                                spots[i].SetActive(true);
+                            }
+                        }
+                        break;
+                    case 3:
+                        for (int i = 0; i < gameController.p3Buildings.Length; i++) {
+                            if (gameController.p3Buildings[i] == "") {
+                                spots[i].SetActive(false);
+                            } else {
+                                spots[i].SetActive(true);
+                            }
+                        }
+                        break;
+                    case 4:
+                        for (int i = 0; i < gameController.p4Buildings.Length; i++) {
+                            if (gameController.p4Buildings[i] == "") {
+                                spots[i].SetActive(false);
+                            } else {
+                                spots[i].SetActive(true);
+                            }
+                        }
+                        break;
+                }
                 break;
             default:
                 //selected enemy, going to select enemy's building
-                parent = selectEnemyHolder;
+                parent = actionHolder;
+                //issue with backtrack past selectEnemyHolder, so backtracks to actionHolder instead
+                switch (selector.name) {
+                    case "SelectTeam1Btn":
+                        for (int i = 0; i < gameController.p1Buildings.Length; i++) {
+                            if (gameController.p1Buildings[i] == "") {
+                                spots[i].SetActive(false);
+                            } else {
+                                spots[i].SetActive(true);
+                            }
+                        }
+                        break;
+                    case "SelectTeam2Btn":
+                        for (int i = 0; i < gameController.p2Buildings.Length; i++) {
+                            if (gameController.p2Buildings[i] == "") {
+                                spots[i].SetActive(false);
+                            } else {
+                                spots[i].SetActive(true);
+                            }
+                        }
+                        break;
+                    case "SelectTeam3Btn":
+                        for (int i = 0; i < gameController.p3Buildings.Length; i++) {
+                            if (gameController.p3Buildings[i] == "") {
+                                spots[i].SetActive(false);
+                            } else {
+                                spots[i].SetActive(true);
+                            }
+                        }
+                        break;
+                    case "SelectTeam4Btn":
+                        for (int i = 0; i < gameController.p4Buildings.Length; i++) {
+                            if (gameController.p4Buildings[i] == "") {
+                                spots[i].SetActive(false);
+                            } else {
+                                spots[i].SetActive(true);
+                            }
+                        }
+                        break;
+                }
                 break;
         }
     }
@@ -160,9 +245,19 @@ public class SelectBacktrackScript : MonoBehaviour
         spot = spotBtn;
 
         if (selector.name == "AttackBtn") {
-            //if you attack, you will get to choose which enemy team to attack
-            
+            //if you want to attack
+            //NEEDS to use spot for which enemy to select from when choosing the actual spot to attack.
+            attackingSpot = spot;
+            //activates selectEnemyHolder, which contains the enemies available to attack
             selectEnemyHolder.SetActive(true);
+            for (int i = 0; i < gameController.amountOfTeams; i++) {
+                if (teamTurn - 1 != i) {
+                    teamSpots[i].SetActive(true);
+                    //maybe have the teamSpots have a distinct color to distingish them in the gamemanager.
+                } else {
+                    teamSpots[i].SetActive(false);
+                }
+            }
         } else if (selector.name == "BuildNewAttackBtn" || selector.name == "BuildNewDefBtn") {
             //if you want to build
             switch (teamTurn) {
@@ -610,10 +705,145 @@ public class SelectBacktrackScript : MonoBehaviour
                     }
                     break;
             }
-        }
-        else {
-            //do build, upgrade or actual atack function
-            Debug.Log("does action! next teams turn!");
+        } else if (selector.name == "SelectTeam1Btn" || selector.name == "SelectTeam2Btn" || selector.name == "SelectTeam3Btn" || selector.name == "SelectTeam4Btn") {
+            //We have selected who we want to attack and which building
+            Debug.Log("Team" + teamTurn + " " + attackingSpot.name + " attacks " + selector.name + " at " + spot.name);
+            //reference to which specific team gets attacked to access array
+            switch (selector.name) {
+                case "SelectTeam1Btn":
+                    team = 0;
+                    break;
+                case "SelectTeam2Btn":
+                    team = 1;
+                    break;
+                case "SelectTeam3Btn":
+                    team = 2;
+                    break;
+                case "SelectTeam4Btn":
+                    team = 3;
+                    break;
+            }
+            //attempt to reduce redundant lines in switches
+            switch (attackingSpot.name) {
+                case "Spot1Btn":
+                    atkSpot = 0;
+                    break;
+                case "Spot2Btn":
+                    atkSpot = 1;
+                    break;
+                case "Spot3Btn":
+                    atkSpot = 2;
+                    break;
+            }
+            //sets the damage based on the level of the offense attacking
+            switch (teamTurn) {
+                case 1:
+                    switch (gameController.p1Buildings[atkSpot]) {
+                        case "A1":
+                            damage = 1;
+                            break;
+                        case "A2":
+                            damage = 2;
+                            break;
+                        case "A3":
+                            damage = 3;
+                            break;
+                        case "D1":
+                            //does defense deal damage?
+                            break;
+                        case "D2":
+                            //does defense deal damage?
+                            break;
+                        case "D3":
+                            //does defense deal damage?
+                            break;
+                    }
+                    break;
+                case 2:
+                    switch (gameController.p2Buildings[atkSpot]) {
+                        case "A1":
+                            damage = 1;
+                            break;
+                        case "A2":
+                            damage = 2;
+                            break;
+                        case "A3":
+                            damage = 3;
+                            break;
+                        case "D1":
+                            //does defense deal damage?
+                            break;
+                        case "D2":
+                            //does defense deal damage?
+                            break;
+                        case "D3":
+                            //does defense deal damage?
+                            break;
+                    }
+                    break;
+                case 3:
+                    switch (gameController.p3Buildings[atkSpot]) {
+                        case "A1":
+                            damage = 1;
+                            break;
+                        case "A2":
+                            damage = 2;
+                            break;
+                        case "A3":
+                            damage = 3;
+                            break;
+                        case "D1":
+                            //does defense deal damage?
+                            break;
+                        case "D2":
+                            //does defense deal damage?
+                            break;
+                        case "D3":
+                            //does defense deal damage?
+                            break;
+                    }
+                    break;
+                case 4:
+                    switch (gameController.p4Buildings[atkSpot]) {
+                        case "A1":
+                            damage = 1;
+                            break;
+                        case "A2":
+                            damage = 2;
+                            break;
+                        case "A3":
+                            damage = 3;
+                            break;
+                        case "D1":
+                            //does defense deal damage?
+                            break;
+                        case "D2":
+                            //does defense deal damage?
+                            break;
+                        case "D3":
+                            //does defense deal damage?
+                            break;
+                    }
+                    break;
+            }
+            int succesrate = Random.Range(0, 10);
+            //random succes or fail
+            if (succesrate >= 3) {
+                //success
+                Debug.Log("attack succeded");
+                //attacked team loses health (change value?)
+                gameController.arrayTeamHealth[team] -= damage;
+                gameManager.GetComponent<GameControllerScript>().Turn();
+                selectSpotHolder.SetActive(false);
+            } else {
+                //fail
+                Debug.Log("attack failed");
+                gameManager.GetComponent<GameControllerScript>().Turn();
+                selectSpotHolder.SetActive(false);
+            }
+        } else {
+            //changes turn if something went wrong in function
+            Debug.Log("something went wrong with if-statement! next teams turn!");
             //Goes to next teams turn
             gameManager.GetComponent<GameControllerScript>().Turn();
             selectSpotHolder.SetActive(false);

@@ -1178,7 +1178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &221572073
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3248,7 +3248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &522966941
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3650,7 +3650,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &583039638
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5191,6 +5191,7 @@ MonoBehaviour:
   eventHappening: 0
   RoundHolder: {fileID: 1992611238}
   teamTurn: 0
+  totalTurns: 0
   teamTurnTxt: {fileID: 457546006}
   teamHealthSlider: {fileID: 567197631}
   teamHealthTxt: {fileID: 2031078155}
@@ -5250,9 +5251,15 @@ MonoBehaviour:
   - {fileID: 1181122519}
   - {fileID: 1451854091}
   - {fileID: 328819980}
+  teamSpots:
+  - {fileID: 522966940}
+  - {fileID: 854674430}
+  - {fileID: 583039637}
+  - {fileID: 221572072}
   parent: {fileID: 0}
   spot: {fileID: 0}
   selector: {fileID: 0}
+  attackingSpot: {fileID: 0}
   assignments: {fileID: 686531154}
   teamTurn: 0
   gameController: {fileID: 0}
@@ -5276,7 +5283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &854674431
 RectTransform:
   m_ObjectHideFlags: 0
