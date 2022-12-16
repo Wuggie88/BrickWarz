@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using KyleDulce.SocketIo;
 
 public class GameControllerScript : MonoBehaviour
 {
@@ -38,6 +39,10 @@ public class GameControllerScript : MonoBehaviour
     public Slider teamHealthSlider;
     public Text teamHealthTxt;
 
+    //network
+    Socket s;
+    private bool runLocal = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,12 +50,20 @@ public class GameControllerScript : MonoBehaviour
         p2Buildings = new string[3] { "", "", "" };
         p3Buildings = new string[3] { "", "", "" };
         p4Buildings = new string[3] { "", "", "" };
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void ConnectToServer() {
+
+        if (runLocal) {
+            Debug.Log("Local server");
+            s = SocketIo.establishSocketConnection("ws://192.168.24.209:80");
+        } else {
+            Debug.Log("There is no Online Server");
+
+        }
+
+        s.connect();
     }
 
     public void startGame() {
@@ -94,6 +107,7 @@ public class GameControllerScript : MonoBehaviour
         } else {
             RoundHolder.SetActive(true);
         }
+
 
         //Invoke("Turn",5); //Only for test purposes
     }
