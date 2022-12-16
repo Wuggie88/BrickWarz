@@ -75,19 +75,20 @@ public class GameControllerScript : MonoBehaviour
         if (teamTurn + 1 > arrayOfTeams.Length)
             teamTurn = 0;
 
-        Debug.Log("Start round for team: " + (teamTurn + 1));
-        teamTurnTxt.text = "Team " + (teamTurn + 1) + "'s turn";
-        setHealth();
-
         //do something with the board lights here
 
         teamTurn++;
         totalTurns++;
 
-        //random event
-        eventHappening = Random.Range(0, 10);
+        Debug.Log("Start round for team: " + (teamTurn));
+        teamTurnTxt.text = "Team " + (teamTurn) + "'s turn";
+        setHealth();
 
-        if(eventHappening == 6 && totalTurns > ((amountOfTeams * 3) - 1)) {
+
+        //random event
+        eventHappening = Random.Range(0, 11);
+
+        if(eventHappening >= 3 && totalTurns > ((amountOfTeams * 2) - 1)) {
             eventHandler.SetActive(true);
             eventHandler.GetComponent<EventScript>().startEvent();
         } else {
@@ -98,8 +99,8 @@ public class GameControllerScript : MonoBehaviour
     }
 
     public void setHealth() {
-        teamHealthTxt.text = "Fortress' Health: " + arrayTeamHealth[teamTurn];
-        teamHealthSlider.value = arrayTeamHealth[teamTurn];
+        teamHealthTxt.text = "Fortress' Health: " + arrayTeamHealth[teamTurn -1];
+        teamHealthSlider.value = arrayTeamHealth[teamTurn -1];
     }
 
     public void SelectSpot() {
