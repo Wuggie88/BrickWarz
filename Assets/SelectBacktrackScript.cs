@@ -107,7 +107,8 @@ public class SelectBacktrackScript : MonoBehaviour
                 break;
             case "UpgradeBtn":
                 parent = buildHolder;
-                // There should be an else if (array[i] == "A3" OR "D3" -> SetActive(false)), as it will show all buildings as able to be upgraded.
+                // There should be an else if (array[i] == "A3" OR "D3" -> SetActive(false)), 
+                //as it will show all buildings as able to be upgraded.
                 switch (teamTurn) {
                     case 1:
                         for (int i = 0; i < gameController.p1Buildings.Length; i++) {

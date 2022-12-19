@@ -101,7 +101,7 @@ public class GameControllerScript : MonoBehaviour
         //random event
         eventHappening = Random.Range(0, 100);
 
-        if(eventHappening >= 85 && totalTurns > ((amountOfTeams * 2) - 1)) {
+        if(eventHappening >= 85 && totalTurns > ((amountOfTeams * 3) - 1)) {
             eventHandler.SetActive(true);
             eventHandler.GetComponent<EventScript>().startEvent();
         } else {
