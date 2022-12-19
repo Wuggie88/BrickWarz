@@ -17,6 +17,7 @@ public class SelectBacktrackScript : MonoBehaviour
     public int team;
     public int atkSpot;
     public int damage;
+    public int defense;
 
     public GameObject assignments;
     public int teamTurn;
@@ -152,7 +153,7 @@ public class SelectBacktrackScript : MonoBehaviour
                 switch (teamTurn) {
                     case 1:
                         for (int i = 0; i < gameController.p1Buildings.Length; i++) {
-                            if (gameController.p1Buildings[i] == "") {
+                            if (gameController.p1Buildings[i] == "" || gameController.p1Buildings[i] == "D1" || gameController.p1Buildings[i] == "D2" || gameController.p1Buildings[i] == "D3") {
                                 spots[i].SetActive(false);
                             } else {
                                 spots[i].SetActive(true);
@@ -161,7 +162,7 @@ public class SelectBacktrackScript : MonoBehaviour
                         break;
                     case 2:
                         for (int i = 0; i < gameController.p2Buildings.Length; i++) {
-                            if (gameController.p2Buildings[i] == "") {
+                            if (gameController.p2Buildings[i] == "" || gameController.p2Buildings[i] == "D1" || gameController.p2Buildings[i] == "D2" || gameController.p2Buildings[i] == "D3") {
                                 spots[i].SetActive(false);
                             } else {
                                 spots[i].SetActive(true);
@@ -170,7 +171,7 @@ public class SelectBacktrackScript : MonoBehaviour
                         break;
                     case 3:
                         for (int i = 0; i < gameController.p3Buildings.Length; i++) {
-                            if (gameController.p3Buildings[i] == "") {
+                            if (gameController.p3Buildings[i] == "" || gameController.p3Buildings[i] == "D1" || gameController.p3Buildings[i] == "D2" || gameController.p3Buildings[i] == "D3") {
                                 spots[i].SetActive(false);
                             } else {
                                 spots[i].SetActive(true);
@@ -179,7 +180,7 @@ public class SelectBacktrackScript : MonoBehaviour
                         break;
                     case 4:
                         for (int i = 0; i < gameController.p4Buildings.Length; i++) {
-                            if (gameController.p4Buildings[i] == "") {
+                            if (gameController.p4Buildings[i] == "" || gameController.p4Buildings[i] == "D1" || gameController.p4Buildings[i] == "D2" || gameController.p4Buildings[i] == "D3") {
                                 spots[i].SetActive(false);
                             } else {
                                 spots[i].SetActive(true);
@@ -708,6 +709,8 @@ public class SelectBacktrackScript : MonoBehaviour
         } else if (selector.name == "SelectTeam1Btn" || selector.name == "SelectTeam2Btn" || selector.name == "SelectTeam3Btn" || selector.name == "SelectTeam4Btn") {
             //We have selected who we want to attack and which building
             Debug.Log("Team" + teamTurn + " " + attackingSpot.name + " attacks " + selector.name + " at " + spot.name);
+            //reset defense for this attack
+            defense = 0;
             //reference to which specific team gets attacked to access array
             switch (selector.name) {
                 case "SelectTeam1Btn":
@@ -826,9 +829,71 @@ public class SelectBacktrackScript : MonoBehaviour
                     }
                     break;
             }
-            int succesrate = Random.Range(0, 10);
+            switch (team) {
+                case 0:
+                    for (int i = 0; i < gameController.p1Buildings.Length; i++) {
+                        switch (gameController.p1Buildings[i]) {
+                            case "D1":
+                                defense += 5;
+                                break;
+                            case "D2":
+                                defense += 10;
+                                break;
+                            case "D3":
+                                defense += 20;
+                                break;
+                        }
+                    }
+                    break;
+                case 1:
+                    for (int i = 0; i < gameController.p2Buildings.Length; i++) {
+                        switch (gameController.p2Buildings[i]) {
+                            case "D1":
+                                defense += 5;
+                                break;
+                            case "D2":
+                                defense += 10;
+                                break;
+                            case "D3":
+                                defense += 20;
+                                break;
+                        }
+                    }
+                    break;
+                case 2:
+                    for (int i = 0; i < gameController.p3Buildings.Length; i++) {
+                        switch (gameController.p3Buildings[i]) {
+                            case "D1":
+                                defense += 5;
+                                break;
+                            case "D2":
+                                defense += 10;
+                                break;
+                            case "D3":
+                                defense += 20;
+                                break;
+                        }
+                    }
+                    break;
+                case 3:
+                    for (int i = 0; i < gameController.p4Buildings.Length; i++) {
+                        switch (gameController.p4Buildings[i]) {
+                            case "D1":
+                                defense += 5;
+                                break;
+                            case "D2":
+                                defense += 10;
+                                break;
+                            case "D3":
+                                defense += 20;
+                                break;
+                        }
+                    }
+                    break;
+                }
+            int succesrate = Random.Range(0, 100);
             //random succes or fail
-            if (succesrate >= 3) {
+            if (succesrate >= 30+defense) {
                 //success
                 Debug.Log("attack succeded");
                 //attacked team loses health (change value?)
