@@ -82,6 +82,7 @@ public class EventScript : MonoBehaviour
     IEnumerator skipTurn() {
         yield return new WaitForSeconds(10);
         gameController.GetComponent<GameControllerScript>().Turn();
+        RoundStartHolder.SetActive(true);
         this.gameObject.SetActive(false);
     }
 }

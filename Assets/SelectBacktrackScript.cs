@@ -900,11 +900,15 @@ public class SelectBacktrackScript : MonoBehaviour
                 gameController.arrayTeamHealth[team] -= damage;
                 gameManager.GetComponent<GameControllerScript>().Turn();
                 selectSpotHolder.SetActive(false);
+                Debug.Log("succesrate = " + succesrate);
+                Debug.Log("Defense = " + defense);
             } else {
                 //fail
                 Debug.Log("attack failed");
                 gameManager.GetComponent<GameControllerScript>().Turn();
                 selectSpotHolder.SetActive(false);
+                Debug.Log("succesrate = " + succesrate);
+                Debug.Log("Defense = " + defense);
             }
         } else {
             //changes turn if something went wrong in function

@@ -3898,7 +3898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teams: 0
-  roundTimer: 15
+  roundTimer: 60
   teamLives: 
   currentRound: 0
 --- !u!4 &608287787
@@ -5264,6 +5264,7 @@ MonoBehaviour:
   team: 0
   atkSpot: 0
   damage: 0
+  defense: 0
   assignments: {fileID: 686531154}
   teamTurn: 0
   gameController: {fileID: 0}
